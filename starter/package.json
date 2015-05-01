@@ -1,0 +1,10 @@
+{
+  "name": "contact-list",
+  "version": "0.0.0",
+  "description": "contact list with extensive functionality",
+  "author": "Adam Jay Abdelaziz",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.7.2"
+  }
+}
