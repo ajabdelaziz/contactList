@@ -11,7 +11,7 @@ function categories(){
      //calling div container
     $container.empty();
       //emptying it
-    var $html = $('<main class="ui page grid"><section class="eight column wide centered"><h1>Future Categories</h1><table class="ui table celled striped"><thead><th>Name</th></thead><tbody></tbody></table><a class="ui label blue"><i class="plus icon" onclick=location.href="#categories/added"></i> Add new...</a><div class="ui green button" onclick=location.href="#/home">Home</div></section></main>');
+    var $html = $('<main class="ui page stackable grid"><section class="eight column wide centered"><h1>Future Categories</h1><table class="ui table celled striped"><thead><th>Name</th></thead><tbody></tbody></table><a class="ui label blue"><i class="plus icon" onclick=location.href="#categories/added"></i> Add new...</a><div class="ui green button" onclick=location.href="#/home">Home</div></section></main>');
 
     $container.append($html);
     var template = $('script[data-id="templateCategories"]').text();

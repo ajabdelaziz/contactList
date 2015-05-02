@@ -23,9 +23,8 @@
       <div class = "twelve column row">
         <div class="ui vertical buttons centered">
           <div class ="containButtons">
-            <div class="ui green button" onclick=location.href="#/categories">categories list</div>  
-            <div class="ui green button" onclick=location.href="#/add%20categories">Add Categories</div> 
-            <div class="ui green button" onclick=location.href="#/add%20contact">Add Contact</div> 
+            <div class="ui green button" onclick=location.href="#/categories">Category list</div>  
+            <div class="ui green button" onclick=location.href="#/contacts">Contact List</div> 
             <div class="ui green button" onclick=location.href="#/about%20AJs">About AJ</div> 
           </div>
         </div>
@@ -34,6 +33,8 @@
     </div>
   </div>
 
+
+<!-- Mustache Template -->
   <script type="text/template" data-id="templateCategories">
     <tr data-id='{{id}}'>
       <td data-attr='category_name' contenteditable='true' >
@@ -46,8 +47,36 @@
     </tr>
   </script>
 
+  <script type="text/template" data-id="templateContacts">
+    <div class = "category">
+      <h2>{{name}}</h2>
+      <article class="{{id}}">
+      </article>
+    </div>
+  </script>
+
+  <script type="text/template" data-id="templateCards">
+    <div class="ui cards">
+      <div class="card">
+        <a class="image">
+          <img src={{image_url}}>
+        </a>
+        <div class="content">
+          <a class="header">{{name}}</a>
+          <div class="meta">
+            <a>{{email}}</a>
+          </div>
+          <div class="description">
+            city: {{city}}, phone: {{phone}}.
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
   <script type="text/javascript" src="/homeScript.js"></script>
   <script type="text/javascript" src="/categoryScript.js"></script>
+  <script type="text/javascript" src="/contactScript.js"></script>
   <script type="text/javascript" src="/router.js"></script>
 </body>
 </html>
