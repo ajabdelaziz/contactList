@@ -1,0 +1,19 @@
+body{
+  background: url("futurecity.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.containHeader{
+  position: relative;
+  top: 50px;
+}
+.containButtons{
+  position:relative;
+  top: 210px;
+}
+h1{
+  font-family: 'Aclonica', sans-serif;
+  color: #F9FFF9;
+  font-size: 36px;
+  text-shadow: 0 0 6px;
+}
