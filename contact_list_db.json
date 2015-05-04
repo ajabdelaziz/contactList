@@ -5,11 +5,11 @@
       "name": "Friends"
     },
     {
-      "id": 2,
-      "name": "Enemies"
+      "name": "My Two Enemies",
+      "id": 2
     },
     {
-      "name": "Business",
+      "name": "\n        Cools",
       "id": 3
     }
   ],
@@ -17,11 +17,29 @@
     {
       "id": 1,
       "categorieId": 1,
-      "name": "NJP",
+      "name": "Neel Patel",
       "city": "New York City",
       "phone": "312-345-5421",
       "email": "NJP3000@hotmail.com",
       "image_url": "https://pbs.twimg.com/profile_images/1314994994/twitterpic_400x400.png"
+    },
+    {
+      "id": 2,
+      "categorieId": 2,
+      "name": "Cleo",
+      "city": "New York City",
+      "phone": "Meow",
+      "email": "Meoww",
+      "image_url": "https://scontent-lga.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10313211_10202947207066999_8562207693963929235_n.jpg?oh=eac8c0e8d9ab5289369ada3bdf1f9517&oe=55CF373E"
+    },
+    {
+      "id": 3,
+      "categorieId": 2,
+      "name": "Nahla",
+      "city": "New York City",
+      "phone": "Mreowww",
+      "email": "Mreoww",
+      "image_url": "https://scontent-lga.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/208144_3721087551600_922074167_n.jpg?oh=cd26f7671757c542e277c000d675d18c&oe=55C3AD69"
     }
   ]
 }

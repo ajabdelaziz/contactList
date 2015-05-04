@@ -6,6 +6,7 @@
   <title>Contact List</title>
   <link rel="stylesheet" type="text/css" href="/bower_components/semantic-ui/dist/semantic.css">
   <link href='http://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="animate.min.css">
   <link rel="stylesheet" type="text/css" href="/styles.css">
   <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
@@ -25,7 +26,8 @@
           <div class ="containButtons">
             <div class="ui green button" onclick=location.href="#/categories">Category list</div>  
             <div class="ui green button" onclick=location.href="#/contacts">Contact List</div> 
-            <div class="ui green button" onclick=location.href="#/about%20AJs">About AJ</div> 
+            <div class="ui green button" onclick=location.href="#/contacts">Add Contact</div> 
+            <div class="ui green button" onclick=location.href="#/aboutAJ">About AJ</div> 
           </div>
         </div>
       </div>
@@ -41,8 +43,8 @@
         {{name}}
       </td>
       <td>
-        <button data-action='save' class='ui button small green' onclick=location.href="#categories/saved">Save</button>
-        <button data-action='delete' class='ui button small red'onclick=location.href="#categories/deleted">Delete</button>
+        <button data-action='save' class='ui button small blue'><i class="add user icon" onclick=location.href="#categories/saved"></i>Save</button>
+        <button data-action='delete' class='ui button small red'><i class="remove user icon" onclick=location.href="#categories/deleted"></i>Delete</button>
       </td>
     </tr>
   </script>
@@ -50,31 +52,43 @@
   <script type="text/template" data-id="templateContacts">
     <div class = "category">
       <h2>{{name}}</h2>
-      <article class="{{id}}">
+      <article class="{{id}}" data-article = "{{id}}">
+        <a class="ui label green"><i class="terminal icon" onclick=location.href="#contacts/added"></i>.Add(newContact)</a>
       </article>
     </div>
   </script>
 
   <script type="text/template" data-id="templateCards">
-    <div class="ui cards">
-      <div class="card">
-        <a class="image">
-          <img src={{image_url}}>
-        </a>
-        <div class="content">
-          <a class="header">{{name}}</a>
-          <div class="meta">
-            <a>{{email}}</a>
-          </div>
-          <div class="description">
-            city: {{city}}, phone: {{phone}}.
+      <div class="ui cards">
+        <div class="card">
+          <div class ="clickable" data-num = {{id}}>
+            <a class="image">
+              <img src={{image_url}}>
+            </a>
+            <div class="content">
+              <a class="header" contenteditable='true' data-attr="contact_name">{{name}}</a>
+              <div class="meta">
+                <a contenteditable='true' data-attr="Email">{{email}}</a>
+              </div>
+              <div class="meta">
+                <a contenteditable='true' data-attr="City">{{city}}</a>
+              </div> 
+              <div class="meta">
+                <a contenteditable='true' data-attr="Phone">{{phone}}</a>
+              </div>
+              <div class="description" contenteditable='true' data-attr="Img_url">
+                {{image_url}}
+              </div>
+            </div>
+              <button data-action='save' class='ui button small blue'><i class="add user icon" onclick=location.href="#contacts/saved"></i>Save</button>
+              <button data-action='delete' class='ui button small red'><i class="remove user icon" onclick=location.href="#contacts/deleted"></i>Delete</button>
           </div>
         </div>
       </div>
-    </div>
   </script>
 
   <script type="text/javascript" src="/homeScript.js"></script>
+  <script type="text/javascript" src="/about.js"></script>
   <script type="text/javascript" src="/categoryScript.js"></script>
   <script type="text/javascript" src="/contactScript.js"></script>
   <script type="text/javascript" src="/router.js"></script>

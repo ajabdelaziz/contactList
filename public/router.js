@@ -6,10 +6,11 @@ var routes = {
     "/categories/saved": savedCategory,
     "/categories/added": addCategory,
     "/categories/deleted": deleteCategory,
-    "/contacts": contacts
-    // "/add%20categories": addCategory,
-    // "/add%20contact": books,
-    // "/about%20AJ": books,
+    "/contacts": contacts,
+    "/contacts/saved": savedContact,
+    "/contacts/deleted": deleteContact,
+    "/contacts/added": addContact,
+    "/aboutAJ": aboutMe
 }
 
 var router = Router(routes);
