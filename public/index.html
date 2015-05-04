@@ -16,81 +16,101 @@
  <div id = "empty">
   <!-- everything after this will be emptied -->
   <div class="ui sixteen column wide stackable center aligned page grid">
-      <div class ="six column row">
-        <div class = "containHeader">
-          <h1>Future Contacts</h1>
-        </div>
+    <div class ="six column row">
+      <div class = "containHeader">
+        <h1>Future Contacts</h1>
       </div>
-      <div class = "twelve column row">
-        <div class="ui vertical buttons centered">
-          <div class ="containButtons">
-            <div class="ui green button" onclick=location.href="#/categories">Category list</div>  
-            <div class="ui green button" onclick=location.href="#/contacts">Contact List</div> 
-            <div class="ui green button" onclick=location.href="#/contacts">Add Contact</div> 
-            <div class="ui green button" onclick=location.href="#/aboutAJ">About AJ</div> 
-          </div>
-        </div>
-      </div>
-      <!-- everything before this gets emptied -->
     </div>
+    <div class = "twelve column row">
+      <div class="ui vertical buttons centered">
+        <div class ="containButtons">
+          <div class="ui green button" onclick=location.href="#/categories">Category list</div>  
+          <div class="ui green button" onclick=location.href="#/contacts">Contact List</div> 
+          <div class="ui green button" onclick=location.href="#/aboutAJ">About AJ</div> 
+        </div>
+      </div>
+    </div>
+    <!-- everything before this gets emptied -->
   </div>
+</div>
 
 
 <!-- Mustache Template -->
-  <script type="text/template" data-id="templateCategories">
-    <tr data-id='{{id}}'>
-      <td data-attr='category_name' contenteditable='true' >
-        {{name}}
-      </td>
-      <td>
-        <button data-action='save' class='ui button small blue'><i class="add user icon" onclick=location.href="#categories/saved"></i>Save</button>
-        <button data-action='delete' class='ui button small red'><i class="remove user icon" onclick=location.href="#categories/deleted"></i>Delete</button>
-      </td>
-    </tr>
-  </script>
+<script type="text/template" data-id="templateCategories">
+  <tr data-id='{{id}}'>
+    <td data-attr='category_name' contenteditable='true' >
+      {{name}}
+    </td>
+    <td>
+      <button data-action='save' class='ui button small blue'><i class="add user icon" onclick=location.href="#categories/saved"></i>Save</button>
+      <button data-action='delete' class='ui button small red'><i class="remove user icon" onclick=location.href="#categories/deleted"></i>Delete</button>
+    </td>
+  </tr>
+</script>
 
-  <script type="text/template" data-id="templateContacts">
+<script type="text/template" data-id="templateContacts">
+  <div class="ui sixteen column wide stackable center aligned page grid">
+    <div class="row"
     <div class = "category">
       <h2>{{name}}</h2>
-      <article class="{{id}}" data-article = "{{id}}">
-        <a class="ui label green"><i class="terminal icon" onclick=location.href="#contacts/added"></i>.Add(newContact)</a>
+      <a class="ui label green"><i class="terminal icon" onclick=location.href="#contacts/added"></i>.Add(newContact)</a>
+    </div>
+    <div class="sixteen wide stackable column">
+      <article class="ui cards" data-article = "{{id}}">
+
       </article>
     </div>
-  </script>
+  </div>
+</div>y
+</script>
 
-  <script type="text/template" data-id="templateCards">
-      <div class="ui cards">
-        <div class="card">
-          <div class ="clickable" data-num = {{id}}>
-            <a class="image">
-              <img src={{image_url}}>
-            </a>
-            <div class="content">
-              <a class="header" contenteditable='true' data-attr="contact_name">{{name}}</a>
-              <div class="meta">
-                <a contenteditable='true' data-attr="Email">{{email}}</a>
-              </div>
-              <div class="meta">
-                <a contenteditable='true' data-attr="City">{{city}}</a>
-              </div> 
-              <div class="meta">
-                <a contenteditable='true' data-attr="Phone">{{phone}}</a>
-              </div>
-              <div class="description" contenteditable='true' data-attr="Img_url">
-                {{image_url}}
-              </div>
-            </div>
-              <button data-action='save' class='ui button small blue'><i class="add user icon" onclick=location.href="#contacts/saved"></i>Save</button>
-              <button data-action='delete' class='ui button small red'><i class="remove user icon" onclick=location.href="#contacts/deleted"></i>Delete</button>
-          </div>
-        </div>
+<script type="text/template" data-id="templateCards">
+  <div class="ui card">
+    <div class="image">
+      <img src={{image_url}}>
+    </div>
+    <div class="content">
+      <a class="header"  contenteditable='true'>{{name}}</a>
+      <div class="meta">
+        <span class="date"  contenteditable='true'>{{email}}</span>
       </div>
-  </script>
+      <div class="description"  contenteditable='true'>
+        City: {{city}}<br>
+        Phone: {{phone}}<br>
+        {{image_url}}
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+       <button data-action='save' class='ui button small blue'><i class="add user icon" onclick=location.href="#contacts/saved"></i>Save</button>
+       <button data-action='delete' class='ui button small red'><i class="remove user icon" onclick=location.href="#contacts/deleted"></i>Delete</button>
+     </a>
+   </div>
+ </div>
+</script>
 
-  <script type="text/javascript" src="/homeScript.js"></script>
-  <script type="text/javascript" src="/about.js"></script>
-  <script type="text/javascript" src="/categoryScript.js"></script>
-  <script type="text/javascript" src="/contactScript.js"></script>
-  <script type="text/javascript" src="/router.js"></script>
+<script type="text/template" data-id="aboutMe">
+  <div class="ui segment" style="
+  position: relative;
+  top: 116px;
+  ">
+  <img class="ui small left floated image" src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/383062_10152706996795284_1650916552_n.jpg?oh=a1498fa9672a00873edb9a8c25b7ce7f&oe=55D900A6&__gda__=1440007725_f467b51584e3d55d83321852e767bb4b">
+  <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
+  <img class="ui small right floated image" src="https://scontent-sea.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/217907_10151984147915284_796949332_n.jpg?oh=0fadc0bc3d06c029feb0af94948d1dfd&oe=55D689B6">
+  <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
+  <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
+</div>
+<div class="ui black button" onclick=location.href="#/home" style="
+position: relative;
+top: 103px;
+left: 600px;
+">Home</div>
+</script>
+
+<script type="text/javascript" src="/homeScript.js"></script>
+<script type="text/javascript" src="/about.js"></script>
+<script type="text/javascript" src="/categoryScript.js"></script>
+<script type="text/javascript" src="/contactScript.js"></script>
+<script type="text/javascript" src="/router.js"></script>
 </body>
 </html>

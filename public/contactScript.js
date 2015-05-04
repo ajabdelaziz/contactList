@@ -26,24 +26,68 @@ function contacts(){
       method: "GET",
       url: "/contacts",
     }).done(function(res){
-      var conEls = [];
+      var arrayofId1= []
+      var arrayofId2=[]
+      var arrayofId3=[]
+      var arrayofId4=[]
+
       var $templateContacts =  $('script[data-id="templateCards"]').text();
-      res.forEach(function(contacts) {
-        var html = Mustache.render($templateContacts, contacts);
-           conEls.push(html);
-      })
-      for(i=0; i<conEls.length; i++){
-        debugger
-        while(parseInt($("article").eq(i).attr('class')) === parseInt(res[i].categorieId)){
-          $("article").eq(i).append(conEls[i]);
-          if(parseInt($("article").eq(i).attr('class')) === parseInt(res[(i + 1)].categorieId)){
-            $("article").eq(i).append(conEls[(i+1)]);
-            break;
-          }else{
-            break;
-          }
+      for(i=0; i<res.length; i++){
+        if(res[i].categorieId === 1){
+          arrayofId1.push(res[i])
+        } else if(res[i].categorieId === 2){
+          arrayofId2.push(res[i])
+        }else if(res[i].categorieId === 3){
+          arrayofId3.push(res[i])
+        }else if(res[i].categorieId === 4){
+          arrayofId4.push(res[i])
         }
       }
+
+      appendEls1 = []
+      arrayofId1.forEach(function (contacts){
+      var html = Mustache.render($templateContacts, contacts);
+           appendEls1.push(html);
+      })
+      $("article").eq(0).append(appendEls1)
+
+      appendEls2 = []
+      arrayofId2.forEach(function (contacts){
+      var html = Mustache.render($templateContacts, contacts);
+           appendEls2.push(html);
+      })
+      $("article").eq(1).append(appendEls2)
+
+      appendEls3 = []
+      arrayofId3.forEach(function (contacts){
+      var html = Mustache.render($templateContacts, contacts);
+           appendEls3.push(html);
+      })
+      $("article").eq(2).append(appendEls3)
+      appendEls4 = []
+      arrayofId4.forEach(function (contacts){
+      var html = Mustache.render($templateContacts, contacts);
+           appendEls4.push(html);
+      })
+      $("article").eq(3).append(appendEls4)
+    //   var conEls = [];
+    //   var $templateContacts =  $('script[data-id="templateCards"]').text();
+    //   res.forEach(function(contacts) {
+    //     var html = Mustache.render($templateContacts, contacts);
+    //        conEls.push(html);
+    //   })
+    //   for(i=0; i<conEls.length; i++){
+    //     debugger
+    //     while(parseInt($("article").eq(i).attr('class')) === parseInt(res[i].categorieId)){
+    //       $("article").eq(i).append(conEls[i]);
+    //       if(parseInt($("article").eq(i).attr('class')) === parseInt(res[(i + 1)].categorieId)){
+    //         $("article").eq(i).append(conEls[(i+1)]);
+    //         break;
+    //       }else{
+    //         break;
+    //       }
+    //     }
+    //   }
     })
   })
 }
@@ -51,8 +95,7 @@ function contacts(){
 //look into making the id part of the cards and seeing what category they are into.  might be easier to work with that....
 
 function savedContact(){
-  $('.ui.cards').on('click', '[data-action="save"]', function(e) {
-    debugger
+  $('.ui.cards').on('click', '[data-action="save"]', function(e) {  
     var row = $(e.target).parents(".clickable");
     var id = row.attr('data-num');
     var contact_name = row.find('[data-attr="contact_name"]').text();
